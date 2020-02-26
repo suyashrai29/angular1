@@ -1,0 +1,22 @@
+<H1> {{input | uppercase}}</H1>
+
+<div><h3>Details:</h3>
+    Photo :<img src="{{img_link}}" alt="gdfvg">
+ <table ><tr>
+     <td>NAME</td>
+     <td>ADRESS</td>
+     <td>PHONE NO</td>
+     <td>GENDER</td>
+ </tr>
+ <tr>
+     <td>{{Name}}</td>
+     <td>{{Adress}}</td>
+     <td>{{Contact_no}}</td>
+     <td>{{Gender}}</td>
+ </tr>
+</table>
+<input type="text" [(ngModel)] ="Name">
+<input type="text" [(ngModel)] ="Adress">
+<input type="text" [(ngModel)] ="Contact_no">
+<input type="text" [(ngModel)] ="Gender">
+<p><button (click) = "submit()">Submit</button></p>

@@ -1,0 +1,52 @@
+<body [ngStyle]= "{'background-color': listUpdated()}">
+    
+
+<h1>Directive Statements(app3)</h1>
+<p *ngIf= "status== 'online'"> Server Status : {{status}} </p>
+<p *ngIf= "status== 'online';else xyz"> Server Status : {{status}} </p>
+<p>
+    <ng-template #xyz> server is not ready</ng-template>
+</p>
+<div [ngSwitch] = "status">
+    <p *ngSwitchCase = "'online'"> server online</p>
+    <p *ngSwitchCase = "'offlie'"> server offline</p>
+    <p *ngSwitchDefault >Sorry</p>
+</div>
+<p ></p>
+
+<table  border="2" *ngIf="employee; else nodata">
+    <tr>
+        <td> <button (click)= "sortId()">Eid</button></td>
+        <td> <button (click)= "sortName()">Name</button></td>
+        <td> <button (click)= "sortSalary()">Salary</button></td>
+    </tr>
+    <tr *ngFor="let e of employee">
+        
+       <td>{{e.eid}}</td>
+        <td>{{e.name}}</td>
+        <td>{{e.salary}}</td>
+    </tr>
+</table>
+<ng-template #nodata>No data</ng-template>
+<input type="number" [(ngModel)] ="eid">
+<input type="text" [(ngModel)] ="name">
+<input type="number" [(ngModel)] ="salary">
+<button (click)="onSubmit()">Submit</button>
+<button (click)="remove()">Remove</button>
+
+<div [ngStyle]="{'background-color': count()}">
+    <p><button (click)="onCount()">Okay</button> </p>
+    <p appHighlight>You clicked {{clickCounter}} times</p>
+</div >
+
+<h1>{{heading | uppercase}}</h1>
+<p>Number is : {{number | percent}}</p>
+<p>{{jsvalue | json}}</p>
+<p>{{birthday | date}}</p>
+
+<hr>
+<button (click)="myClick()">Click Me</button>
+<div id="did"> </div>
+<button (click)="getPerson()">Get</button>
+
+</body>
